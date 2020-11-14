@@ -13,20 +13,42 @@ class App extends Component {
     };
   }
 
-  /* TODO 1*/
+  inputHandler(e) {
+    this.setState({ 
+      pendingTitle: e.target.value
+    });
+  }
+
+  submitHandler(e) {
+    e.preventDefault();
+    this.setState({
+      listToDo: [
+        {
+          title: this.state.pendingTitle,
+          items: [],
+        },
+        ...this.state.listToDo
+      ],
+      pendingTitle: ""
+    })
+  }
 
   render() {
     return (
-      <div className="wrapper">
+      <div className="origin">
         <div className="inputTitle">
           <h1>Todo List App</h1>
           <InputForm
-            /* TODO 1*/
+            onSubmit={(i) => this.submitHandler(i)}
+            onChange={(e) => this.inputHandler(e)}
+            pendingItem={this.state.pendingTitle}
           />
         </div>
         {this.state.listToDo.map((todoList, index) => (
           <ToDoList
-            /* TODO 2*/
+            key={todoList.title}
+            title={todoList.title}
+            items={todoList.items}
           />
         ))}
       </div>

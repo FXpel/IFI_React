@@ -12,21 +12,33 @@ class ToDoList extends Component {
     };
   }
 
-  inputHandler(e) {
-    this.setState({ 
-      pendingItem: e.target.value
-    });
-  }
-
   submitHandler(e) {
     e.preventDefault();
     this.setState({
-      // TODO 1
+      list: [
+        {
+          name: this.state.pendingItem,
+        },
+        ...this.state.list
+      ],
+      pendingItem: ""
     })
   }
 
   deleteHandler(index) {
-    // TODO 2
+    const newState = this.state.list.filter(item => 
+      this.state.list.indexOf(item) !== index 
+    );
+
+    this.setState({ 
+      list: newState
+    });
+  };
+
+  inputHandler(e) {
+    this.setState({ 
+      pendingItem: e.target.value
+    });
   }
 
   render() {
@@ -36,12 +48,12 @@ class ToDoList extends Component {
             ToDoList
         </h2>
         <InputForm
-          onChange={(e) => this.inputHandler(e)}
           onSubmit={(i) => this.submitHandler(i)}
+          onChange={(e) => this.inputHandler(e)}
           pendingItem={this.state.pendingItem}
         />
   
-        <List list={[] /* TODO 3 */} onDelete={(i) => this.deleteHandler(i)} />
+        <List list={this.state.list} onDelete={(i) => this.deleteHandler(i)} />
       </div>
     );
   }
