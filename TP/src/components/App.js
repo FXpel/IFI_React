@@ -1,65 +1,55 @@
 import React, { Component } from "react";
-import "../styles/reset.css";
 import "../styles/App.css";
 import InputForm from "./InputForm";
-import List from './List';
+import ToDoList from "./ToDoList";
 
 class App extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      list: [],
-      pendingItem: ""
+      listToDo: [],
+      pendingTitle: ""
     };
+  }
+
+  inputHandler(e) {
+    this.setState({ 
+      pendingTitle: e.target.value
+    });
   }
 
   submitHandler(e) {
     e.preventDefault();
     this.setState({
-      list: [
+      listToDo: [
         {
-          name: this.state.pendingItem,
+          title: this.state.pendingItem,
+          items: [],
         },
-        ...this.state.list
+        ...this.state.listToDo
       ],
-      pendingItem: ""
+      pendingTitle: ""
     })
-    return (
-      <form
-        onSubmit={this.props.submitHandler}
-        className="todoInput">
-
-      </form>
-    )
-  }
-
-  deleteHandler(index) {
-    const newState = this.state.list.filter(item => 
-      this.state.list.indexOf(item) !== index 
-    );
-
-    this.setState({ 
-      list: newState
-    });
-  };
-
-  inputHandler(e) {
-    this.setState({ 
-      pendingItem: e.target.value
-    });
   }
 
   render() {
     return (
-      <div className="wrapper">
+      <div>
         <InputForm
           onSubmit={(i) => this.submitHandler(i)}
           onChange={(e) => this.inputHandler(e)}
-          pendingItem={this.state.pendingItem}
+          pendingItem={this.state.pendingTitle}
         />
-  
-        <List list={this.state.list} onDelete={(i) => this.deleteHandler(i)} />
+        <ul>
+          {this.state.listToDo.map((todoList, index) => (
+            <ToDoList
+              key={todoList.title}
+              title={todoList.title}
+              items={todoList.items}
+            />
+          ))}
+        </ul>
       </div>
     );
   }
