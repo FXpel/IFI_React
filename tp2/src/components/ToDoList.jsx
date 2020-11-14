@@ -7,7 +7,7 @@ class ToDoList extends Component {
     super(props);
 
     this.state = {
-      list: this.props.items,
+      list: [],
       pendingItem: ""
     };
   }
@@ -43,7 +43,7 @@ class ToDoList extends Component {
 
   render() {
     return (
-      <div className="wrapper">
+      <div className="todoList">
         <h2 className="title">
             {this.props.title}
         </h2>
