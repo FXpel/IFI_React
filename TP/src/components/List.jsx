@@ -1,7 +1,7 @@
 import React from "react";
 import ListItem from "./ListItem";
 
-  function ToDoList(props) {
+  function List(props) {
     return (
       <ul>
         {props.list.map((item, index) => (
@@ -16,4 +16,4 @@ import ListItem from "./ListItem";
     );
   };
 
-export default ToDoList;
+export default List;

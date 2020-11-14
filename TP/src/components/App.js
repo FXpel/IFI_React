@@ -2,14 +2,14 @@ import React, { Component } from "react";
 import "../styles/reset.css";
 import "../styles/App.css";
 import InputForm from "./InputForm";
-import ToDoList from './ToDoList';
+import List from './List';
 
 class App extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      toDoList: [],
+      list: [],
       pendingItem: ""
     };
   }
@@ -17,11 +17,11 @@ class App extends Component {
   submitHandler(e) {
     e.preventDefault();
     this.setState({
-      toDoList: [
+      list: [
         {
           name: this.state.pendingItem,
         },
-        ...this.state.toDoList
+        ...this.state.list
       ],
       pendingItem: ""
     })
@@ -35,12 +35,12 @@ class App extends Component {
   }
 
   deleteHandler(index) {
-    const newState = this.state.toDoList.filter(item => 
-      this.state.toDoList.indexOf(item) !== index 
+    const newState = this.state.list.filter(item => 
+      this.state.list.indexOf(item) !== index 
     );
 
     this.setState({ 
-      toDoList: newState
+      list: newState
     });
   };
 
@@ -59,7 +59,7 @@ class App extends Component {
           pendingItem={this.state.pendingItem}
         />
   
-        <ToDoList list={this.state.toDoList} onDelete={(i) => this.deleteHandler(i)} />
+        <List list={this.state.list} onDelete={(i) => this.deleteHandler(i)} />
       </div>
     );
   }

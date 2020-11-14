@@ -9,7 +9,7 @@ function InputForm(props) {
         onChange={props.onChange}
         value={props.pendingItem}
         placeholder="Add an item"
-    />
+      />
     <button type="submit" className="submit">
       Add
     </button>
