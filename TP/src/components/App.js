@@ -24,7 +24,7 @@ class App extends Component {
     this.setState({
       listToDo: [
         {
-          title: this.state.pendingItem,
+          title: this.state.pendingTitle,
           items: [],
         },
         ...this.state.listToDo
