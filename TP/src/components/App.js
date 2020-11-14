@@ -35,21 +35,22 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        <InputForm
-          onSubmit={(i) => this.submitHandler(i)}
-          onChange={(e) => this.inputHandler(e)}
-          pendingItem={this.state.pendingTitle}
-        />
-        <ul>
-          {this.state.listToDo.map((todoList, index) => (
-            <ToDoList
-              key={todoList.title}
-              title={todoList.title}
-              items={todoList.items}
-            />
-          ))}
-        </ul>
+      <div className="origin">
+        <div className="inputTitle">
+          <h1>Todo List App</h1>
+          <InputForm
+            onSubmit={(i) => this.submitHandler(i)}
+            onChange={(e) => this.inputHandler(e)}
+            pendingItem={this.state.pendingTitle}
+          />
+        </div>
+        {this.state.listToDo.map((todoList, index) => (
+          <ToDoList
+            key={todoList.title}
+            title={todoList.title}
+            items={todoList.items}
+          />
+        ))}
       </div>
     );
   }

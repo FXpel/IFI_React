@@ -2,19 +2,40 @@
   box-sizing: border-box;
 }
 
-body {
+html, body {
   background: lightgray;
   font-family: "Noto", sans-serif;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  height: 100%;
+  width: 100%;
+}
+
+#root {
+  height: 100%;
+}
+
+.origin {
+  white-space: nowrap;
+  height: 100%;
 }
 
 .wrapper {
+  display: inline-block;
   max-width: 450px;
   margin-left: 30px;
   background: #fff;
-  margin-top: 30px;
-  display: flex;
-  flex-direction: column;
   padding: 30px;
+  height: 80%;
+  white-space: nowrap;
+  vertical-align: bottom;
+  overflow: auto;
+}
+
+.inputTitle {
+  width: 25%;
+  height: 20%;
+  margin: 0 auto 0 auto;
 }
 
 .todoInput {
@@ -60,7 +81,7 @@ ul {
 
 li {
   padding: 20px 15px 20px 15px;
-  margin-top: 15px;
+  margin-bottom: 15px;
   border-radius: 4px;
   border: 1px solid lightgrey;
   display: flex;
