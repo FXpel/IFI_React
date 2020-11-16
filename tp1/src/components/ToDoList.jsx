@@ -14,6 +14,7 @@ class ToDoList extends Component {
 
   submitHandler(e) {
     e.preventDefault();
+    if (this.state.pendingItem === "") return;
     this.setState({
       list: [
         {
@@ -26,8 +27,8 @@ class ToDoList extends Component {
   }
 
   deleteHandler(index) {
-    const newState = this.state.list.filter(item => 
-      this.state.list.indexOf(item) !== index 
+    const newState = this.state.list.filter((item, i) =>
+      i !== index
     );
 
     this.setState({ 
