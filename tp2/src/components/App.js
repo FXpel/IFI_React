@@ -26,6 +26,7 @@ class App extends Component {
         {
           title: this.state.pendingTitle,
           items: [],
+          timestamp: Date.now(),
         },
         ...this.state.listToDo
       ],
@@ -44,9 +45,9 @@ class App extends Component {
             pendingItem={this.state.pendingTitle}
           />
         </div>
-        {this.state.listToDo.map((todoList, index) => (
+        {this.state.listToDo.map((todoList) => (
           <ToDoList
-            key={todoList.title}
+            key={todoList.timestamp}
             title={todoList.title}
             items={todoList.items}
           />
