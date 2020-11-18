@@ -4,7 +4,7 @@
 On réutilise le code du TP1 mais cette fois-ci, on aimerait laisser la possibilité à l'utilisateur de créer plusieurs ToDoList.
 Il va donc falloir afficher une liste de ToDoList.
 
-![](../images/tp1.jpg)
+![](../images/tp2.jpg)
 
 ## Consignes
 Pour ce TP, vous êtes laissés bien plus libres.
