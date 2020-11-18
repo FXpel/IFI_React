@@ -4,7 +4,7 @@
 On va développer une ToDoListe, c'est-à-dire une liste de tâches à effectuer.
 Notre application comporte un champ pour entrer le nom de l'item, et la liste des items.
 
-![](../images/tp1.jpg)
+![](../cours/tp1.jpg)
 
 ## Consignes
 Le projet est un projet standard créé à l'aide de `create-react-app`. Les composants sont situés dans le dossier `src/comporents/`.  
