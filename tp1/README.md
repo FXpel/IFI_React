@@ -4,7 +4,7 @@
 On va développer une ToDoListe, c'est-à-dire une liste de tâches à effectuer.
 Notre application comporte un champ pour entrer le nom de l'item, et la liste des items.
 
-"MOCKUP/DEMO"
+![](../images/tp1.jpg)
 
 ## Consignes
 Le fichier racine est `App.js`. Il fait appel au composant ToDoList.
