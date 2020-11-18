@@ -49,7 +49,7 @@ class ToDoList extends Component {
             {this.props.title}
         </h2>
         <InputForm
-          onChange={(e) => this.inputHandler(e)}
+          onInput={(e) => this.inputHandler(e)}
           onSubmit={(i) => this.submitHandler(i)}
           pendingItem={this.state.pendingItem}
         />

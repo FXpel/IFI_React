@@ -6,7 +6,7 @@ function InputForm(props) {
       <input
         className="input"
         type="text"
-        onChange={props.onChange}
+        onChange={props.onInput}
         value={props.pendingItem}
         placeholder="Add an item"
       />
