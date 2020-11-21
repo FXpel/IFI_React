@@ -1,6 +1,6 @@
 import React, { useState, useLayoutEffect } from "react";
 import { Card, CardActions, CardContent, IconButton, Typography } from "@material-ui/core";
-import { Pause, PlayArrow, Restore } from "@material-ui/icons";
+import { Pause, PlayArrow, Replay } from "@material-ui/icons";
 
 function Chrono(props) {
 
@@ -62,7 +62,7 @@ function Chrono(props) {
                         <IconButton onClick={start}><PlayArrow /></IconButton> :
                         <IconButton onClick={stop}><Pause /></IconButton>
                 }
-                <IconButton onClick={reset}><Restore /></IconButton>
+                <IconButton onClick={reset}><Replay /></IconButton>
             </CardActions>
         </Card>
     );
