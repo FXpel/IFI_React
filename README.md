@@ -1,7 +1,7 @@
 # IFI_React
 
 Les consignes de chaque TP sont dans les dossiers TP1 et TP2.
-La correction est sur la branche correction.
+La correction est sur la branche correction
 
 ## Remarques pour Clément
 Pour voir la correction, on pourra faire un `git diff corrections`.  
